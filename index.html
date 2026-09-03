@@ -4,7 +4,36 @@
 @media(max-width:600px){body{font-size:15px;overflow-x:hidden}.container{width:100%;padding:12px}.hero{padding:20px 14px!important;border-radius:16px!important}.hero h1{font-size:1.45rem!important}.hero p{font-size:.9rem}.tools{display:grid!important;grid-template-columns:1fr 1fr!important}.tools>*{width:100%!important;min-width:0!important}.search{grid-column:1/-1}.question{padding:15px!important;border-radius:14px!important}.question h3{font-size:1rem!important;line-height:1.45}.option{padding:13px 12px!important;min-height:52px!important;border-radius:12px!important}.option input{width:20px;height:20px}.bottom{left:8px!important;right:8px!important;bottom:calc(8px + env(safe-area-inset-bottom))!important;gap:6px!important}.bottom button{min-height:44px!important;padding:9px 10px!important;font-size:13px!important}.score{font-size:1rem!important}.result-panel{padding:18px!important}.timer{font-size:.95rem!important}}
 @media(pointer:coarse){button,input,select{min-height:44px}.option{cursor:pointer}}
 html,body{width:100%;max-width:100%;-webkit-text-size-adjust:100%}.bottom{padding-bottom:env(safe-area-inset-bottom)}
-.question.answered-locked input[type="radio"]{cursor:not-allowed}.question.answered-locked label{opacity:.82}</style></head><body><div class="container"><header><h1>Maame Konadu 212 Management MCQ Guide</h1><p style="margin:5px 0;color:var(--muted)">176 exam-focused questions • Instant feedback • Easy review</p><p>176 questions. Select an option to immediately see whether it is correct. The preferred answer is shown after each response.</p><p class="note">↻ Restart Quiz clears all answers and saved progress, resets the timer, and reloads the quiz from Question 1.</p><div class="score" id="score">Score: 0 / 176 (0%)</div></header><div class="tools"><button id="restartTop" type="button" class="primary" title="Clear all answers and restart from Question 1">↻ Restart Quiz</button><input id="search" type="search" placeholder="🔎 Search questions..."><select id="filter"><option value="all">Show all questions</option><option value="unanswered">Unanswered only</option><option value="correct">Correct only</option><option value="incorrect">Incorrect only</option></select><input id="jump" type="number" min="1" max="176" placeholder="Question #"><button class="primary" id="go">Go</button></div><div class="empty" id="empty">No questions match your search.</div><div id="quiz"><section class="question" id="question1">
+.question.answered-locked input[type="radio"]{cursor:not-allowed}.question.answered-locked label{opacity:.82}
+/* User-friendly refinements */
+.hero{position:sticky;top:8px;z-index:20;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px;box-shadow:var(--shadow);margin-bottom:12px}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.2px;color:var(--primary);margin-bottom:5px}.subtitle{margin:4px 0 14px;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.stat{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:9px 11px}.stat span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;font-weight:800}.stat strong{display:block;font-size:15px;margin-top:2px}.progress-wrap{height:9px;background:var(--border);border-radius:99px;overflow:hidden;margin-top:12px}.progress-bar{height:100%;width:0;background:var(--primary);border-radius:99px;transition:width .25s}.tip{font-size:13px;color:var(--muted);margin:10px 0 0}.tools{position:sticky;top:218px;z-index:19;background:var(--bg);padding:8px 0;border-bottom:1px solid transparent}.tools input,.tools select{min-height:44px}.tools button{min-height:44px}.jump-group{display:flex;gap:6px;flex:1;min-width:190px}.jump-group input{min-width:0;flex:1}.timer{display:inline-flex;align-items:center;justify-content:center;min-width:76px;padding:0 10px;border:1px solid var(--border);border-radius:10px;background:var(--card);font-weight:900;font-variant-numeric:tabular-nums}.timer.urgent{color:var(--bad);border-color:#e8aaa5}.focus-question{animation:focusPulse 1.2s ease}.question{scroll-margin-top:280px}.option{transition:background .15s,border-color .15s,transform .15s}.option:focus-within{outline:3px solid rgba(49,94,251,.18);border-color:var(--primary)}.option input{flex:0 0 auto}.question.answered-locked .option{cursor:default}.question.answered-locked .option:hover{transform:none}.question.answered-locked .option:has(input:checked){font-weight:650}.feedback{line-height:1.45}.empty button{margin-top:10px}
+@keyframes focusPulse{0%{box-shadow:0 0 0 0 rgba(49,94,251,.45)}100%{box-shadow:0 0 0 16px rgba(49,94,251,0)}}
+@media(max-width:700px){.hero{position:relative;top:auto;padding:16px}.stats{grid-template-columns:1fr 1fr}.tools{position:sticky;top:0;z-index:19;padding:7px 0;background:var(--bg)}.tools .search{order:10}.jump-group{min-width:0}.question{scroll-margin-top:180px}}
+@media(max-width:430px){.tools{display:grid!important;grid-template-columns:1fr 1fr!important}.tools>*{width:100%!important;min-width:0!important}.search{grid-column:1/-1}.jump-group{grid-column:1/-1}.timer{width:100%}.stat strong{font-size:14px}}
+</style></head><body><div class="container"><header class="hero">
+<div class="eyebrow">MANAGEMENT • MCQ PRACTICE</div>
+<h1>Maame Konadu 212 Management MCQ Guide</h1>
+<p class="subtitle">176 exam-focused questions with instant feedback and saved progress.</p>
+<div class="stats" aria-live="polite">
+  <div class="stat"><span>Score</span><strong id="score">0 / 176 (0%)</strong></div>
+  <div class="stat"><span>Progress</span><strong id="progressText">0 / 176 answered</strong></div>
+  <div class="stat"><span>Correct</span><strong id="correctText">0</strong></div>
+  <div class="stat"><span>Incorrect</span><strong id="incorrectText">0</strong></div>
+</div>
+<div class="progress-wrap" aria-label="Quiz progress"><div class="progress-bar" id="progressBar"></div></div>
+<p class="tip">💡 Choose an answer to see the preferred answer immediately. Your answers are saved automatically.</p>
+</header>
+<div class="tools" aria-label="Quiz controls">
+  <button id="restartTop" type="button" class="primary">↻ Restart</button>
+  <button id="saveBtn" type="button" class="secondary">💾 Save</button>
+  <button id="timerBtn" type="button" class="secondary">⏱ Start 60:00</button>
+  <span id="timer" class="timer" aria-live="polite">60:00</span>
+  <input id="search" class="search" type="search" placeholder="🔎 Search questions or answers…" aria-label="Search questions">
+  <select id="filter" aria-label="Filter questions"><option value="all">All questions</option><option value="unanswered">Unanswered</option><option value="correct">Correct</option><option value="incorrect">Incorrect</option></select>
+  <div class="jump-group"><input id="jump" type="number" min="1" max="176" placeholder="Question #" aria-label="Question number"><button class="primary" id="go" type="button">Go</button></div>
+</div>
+<div class="empty" id="empty">No questions match your search or filter. <button id="clearFilters" class="secondary" type="button">Clear filters</button></div>
+<div id="quiz"><section class="question" id="question1">
 <h3>1. Who defined management as 'the accomplishment of results through the efforts of other people'?</h3>
 <label class="option">
 <input name="q1" type="radio" value="0"/>
@@ -1910,18 +1939,87 @@ html,body{width:100%;max-width:100%;-webkit-text-size-adjust:100%}.bottom{paddin
 <div aria-live="polite" class="feedback" id="result176"></div>
 </section></div><div class="controls"><button id="check">Check Quiz</button><button id="reset" type="button" title="Clear all answers, reset the timer, and restart from Question 1">↻ Restart Quiz</button></div></div><script>const answers=[1, 2, 1, 2, 1, 2, 3, 1, 2, 2, 1, 1, 2, 1, 2, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 3, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 2, 1, 2, 1, 1, 0, 1, 2, 1, 1, 1, 1, 3, 1, 1, 1, 2, 1, 1, 2, 1, 0, 1, 1, 1, 1, 2, 0, 1, 3, 3, 2, 2, 2, 1, 2, 0, 0, 0, 0, 2, 2, 0, 2, 1, 0, 2, 1, 2, 0, 2, 0, 2, 1, 0, 2, 2, 3, 0, 2, 1, 0, 1, 1, 1, 1, 2, 3, 0, 2, 1, 2, 0, 2, 1, 2, 0, 2, 0, 0, 2, 3, 2, 1, 3, 3, 1, 2, 2, 0, 0, 0, 0, 2, 1, 2, 2, 2, 1, 2, 0, 1, 3, 2, 0, 0, 0, 1, 2, 2, 0, 0, 3, 1, 3, 3, 1, 2, 1, 0, 0];
 const total=answers.length;
-const originalQuestions=[...document.querySelectorAll('.question')];
-originalQuestions.forEach((q,i)=>{q.dataset.key=String(i);q.dataset.answer=String(answers[i]);});
-function updateScore(){let score=0;document.querySelectorAll('.question').forEach(q=>{const x=q.querySelector('input:checked');if(x&&Number(x.value)===Number(q.dataset.answer))score++;});const el=document.getElementById('score');if(el)el.textContent=`Score: ${score} / ${total} (${Math.round(score/total*100)}%)`;}
-function showFeedback(q){const x=q.querySelector('input:checked'),f=q.querySelector('.feedback'),ans=Number(q.dataset.answer);if(!f)return;if(!x){f.className='feedback incorrect';f.textContent='⚠ No answer selected.';return;}const ok=Number(x.value)===ans;const correctInput=q.querySelector(`input[value="${ans}"]`);const text=correctInput?correctInput.parentElement.innerText.replace(/^[A-D]\.\s*/,'').trim():`Option ${String.fromCharCode(65+ans)}`;f.className='feedback '+(ok?'correct':'incorrect');f.textContent=ok?`✓ Correct — ${String.fromCharCode(65+ans)}. ${text}`:`✗ Incorrect — Preferred answer: ${String.fromCharCode(65+ans)}. ${text}`;q.classList.toggle('correct',ok);q.classList.toggle('wrong',!ok);}
-function lockAnsweredQuestion(q){q.querySelectorAll('input[type=\"radio\"]').forEach(x=>x.disabled=true);q.classList.add('answered-locked');}
-function bindQuestions(){document.querySelectorAll('.question').forEach(q=>q.querySelectorAll('input[type=\"radio\"]').forEach(x=>x.addEventListener('change',()=>{if(q.dataset.locked==='1')return;q.dataset.locked='1';showFeedback(q);updateScore();saveProgress();lockAnsweredQuestion(q);})));}
-function saveProgress(){try{const data={};document.querySelectorAll('.question').forEach(q=>{const x=q.querySelector('input:checked');if(x)data[q.dataset.key]=x.value;});localStorage.setItem('maameKonaduQuizAnswers',JSON.stringify(data));}catch(e){}}
-function loadProgress(){try{const data=JSON.parse(localStorage.getItem('maameKonaduQuizAnswers')||'{}');document.querySelectorAll('.question').forEach(q=>{const v=data[q.dataset.key];if(v!=null){const x=q.querySelector('input[value="'+v+'"]');if(x)x.checked=true;}});document.querySelectorAll('.question').forEach(q=>{if(q.querySelector('input:checked')){q.dataset.locked='1';showFeedback(q);lockAnsweredQuestion(q);}});}catch(e){}updateScore();}
-function renumberQuestions(){document.querySelectorAll('.question').forEach((q,i)=>{q.id='question'+(i+1);const h=q.querySelector('h3');if(h)h.textContent=h.textContent.replace(/^\s*\d+\.\s*/,`${i+1}. `);q.querySelectorAll('input').forEach(x=>x.name='q'+(i+1));});}
-function shuffleQuestions(){const quiz=document.getElementById('quiz');const arr=[...quiz.querySelectorAll('.question')];for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}arr.forEach(q=>quiz.appendChild(q));renumberQuestions();}
-function restartQuiz(){try{localStorage.removeItem('maameKonaduQuizAnswers');localStorage.removeItem('maameKonaduQuizState');}catch(e){}location.reload();}
-document.getElementById('restartTop').addEventListener('click',e=>{e.preventDefault();restartQuiz();});document.getElementById('reset').addEventListener('click',e=>{e.preventDefault();restartQuiz();});
-shuffleQuestions();bindQuestions();loadProgress();
-document.getElementById('check').addEventListener('click',()=>{document.querySelectorAll('.question').forEach(showFeedback);updateScore();window.scrollTo({top:0,behavior:'smooth'});});
-</script><script>(function(){const qs=[...document.querySelectorAll('.question')];const search=document.getElementById('search'),filter=document.getElementById('filter'),empty=document.getElementById('empty');function apply(){let n=0,t=search.value.toLowerCase(),m=filter.value;qs.forEach(q=>{let x=q.querySelector('input:checked'),ok=q.classList.contains('correct'),show=(!t||q.innerText.toLowerCase().includes(t))&&(m==='all'||m==='unanswered'&&!x||m==='correct'&&ok||m==='incorrect'&&x&&!ok);q.classList.toggle('hidden-question',!show);if(show)n++});empty.style.display=n?'none':'block'}search.oninput=apply;filter.onchange=apply;document.getElementById('go').onclick=function(e){e.preventDefault();let n=parseInt(document.getElementById('jump').value,10);if(!Number.isInteger(n)||n<1||n>qs.length){document.getElementById('jump').focus();return;}let target=document.getElementById('question'+n);if(!target)target=qs[n-1];qs.forEach(function(q){q.classList.remove('hidden-question');});if(target){target.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('jump').value='';}};document.getElementById('jump').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();document.getElementById('go').click();}});apply();})();</script><div class="bottom"><button onclick="scrollTo({top:0,behavior:'smooth'})">↑ Top</button><button onclick="scrollBy({top:-window.innerHeight*.8,behavior:'smooth'})">↑ Previous</button><button onclick="scrollBy({top:window.innerHeight*.8,behavior:'smooth'})">Next ↓</button></div><script>(function(){let timerId=null,seconds=3600;const timerEl=document.getElementById('timer');const saveBtn=document.getElementById('saveBtn');const timerBtn=document.getElementById('timerBtn');if(saveBtn)saveBtn.onclick=function(){saveProgress();this.textContent='✓ Progress Saved';setTimeout(()=>this.textContent='💾 Save Progress',1200)};if(timerBtn)timerBtn.onclick=function(){if(timerId){clearInterval(timerId);timerId=null;this.textContent='⏱ Resume Timer';return}this.textContent='⏸ Pause Timer';timerId=setInterval(()=>{seconds--;let m=Math.floor(seconds/60),s=seconds%60;if(timerEl)timerEl.textContent='Time: '+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');if(seconds<=0){clearInterval(timerId);timerId=null;alert('Time is up. Your current score is shown above.');}},1000)};})();</script></body></html>
+const questions=[...document.querySelectorAll('.question')];
+const $=id=>document.getElementById(id);
+questions.forEach((q,i)=>{q.dataset.key=String(i);q.dataset.answer=String(answers[i]);});
+
+function correctLetter(i){return String.fromCharCode(65+Number(i));}
+function answerText(q,i){const el=q.querySelector(`input[value="${i}"]`);return el?el.parentElement.innerText.replace(/^[A-D]\.\s*/,'').trim():`Option ${correctLetter(i)}`;}
+function getSelected(q){return q.querySelector('input[type="radio"]:checked');}
+
+function updateStats(){
+ let answered=0,correct=0;
+ questions.forEach(q=>{const x=getSelected(q);if(x){answered++;if(Number(x.value)===Number(q.dataset.answer))correct++;}});
+ const incorrect=answered-correct, pct=answered?Math.round(correct/answered*100):0;
+ $('score').textContent=`Score: ${correct} / ${total} (${pct}%)`;
+ $('progressText').textContent=`${answered} / ${total} answered`;
+ $('correctText').textContent=correct; $('incorrectText').textContent=incorrect;
+ $('progressBar').style.width=`${Math.round(answered/total*100)}%`;
+}
+
+function showFeedback(q){
+ const x=getSelected(q),f=q.querySelector('.feedback'),ans=Number(q.dataset.answer);
+ if(!f)return;
+ if(!x){f.className='feedback';f.textContent='';return;}
+ const ok=Number(x.value)===ans;
+ f.className='feedback '+(ok?'correct':'incorrect');
+ f.textContent=ok?`✓ Correct — ${correctLetter(ans)}. ${answerText(q,ans)}`:`✗ Incorrect — Preferred answer: ${correctLetter(ans)}. ${answerText(q,ans)}`;
+ q.classList.toggle('correct',ok);q.classList.toggle('wrong',!ok);
+}
+
+function lockQuestion(q){q.dataset.locked='1';q.classList.add('answered-locked');q.querySelectorAll('input[type="radio"]').forEach(x=>x.disabled=true);}
+function saveProgress(){try{const data={};questions.forEach(q=>{const x=getSelected(q);if(x)data[q.dataset.key]=x.value;});localStorage.setItem('maameKonaduQuizAnswers',JSON.stringify(data));return true;}catch(e){return false;}}
+function loadProgress(){try{const data=JSON.parse(localStorage.getItem('maameKonaduQuizAnswers')||'{}');questions.forEach(q=>{const v=data[q.dataset.key];if(v!=null){const x=q.querySelector(`input[value="${v}"]`);if(x)x.checked=true;}});questions.forEach(q=>{if(getSelected(q)){showFeedback(q);lockQuestion(q);}});}catch(e){}updateStats();}
+
+function bindQuestions(){questions.forEach(q=>q.querySelectorAll('input[type="radio"]').forEach(input=>input.addEventListener('change',()=>{
+ if(q.dataset.locked==='1')return;
+ q.querySelectorAll('input[type="radio"]').forEach(x=>x.disabled=true);
+ showFeedback(q);lockQuestion(q);updateStats();saveProgress();applyFilters();
+ q.scrollIntoView({behavior:'smooth',block:'center'});
+})));}
+
+function renumberQuestions(){
+ const current=[...$('quiz').querySelectorAll('.question')];
+ current.forEach((q,i)=>{
+  q.id='question'+(i+1);
+  const h=q.querySelector('h3');
+  if(h) h.textContent=h.textContent.replace(/^\s*\d+\.\s*/,`${i+1}. `);
+  q.querySelectorAll('input[type=radio]').forEach(x=>x.name='q'+(i+1));
+ });
+}
+function shuffleQuestions(){
+ const quiz=$('quiz');
+ const arr=[...quiz.querySelectorAll('.question')];
+ let previous='';
+ try{previous=localStorage.getItem('maameKonaduLastOrder')||'';}catch(e){}
+ let order='',attempts=0;
+ do{
+  for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}
+  order=arr.map(q=>q.dataset.key||'').join(',');
+  attempts++;
+ }while(order===previous && attempts<5 && arr.length>1);
+ arr.forEach(q=>quiz.appendChild(q));
+ renumberQuestions();
+ try{localStorage.setItem('maameKonaduLastOrder',order);}catch(e){}
+}
+function restartQuiz(){try{localStorage.removeItem('maameKonaduQuizAnswers');localStorage.removeItem('maameKonaduQuizState');localStorage.removeItem('maameKonaduLastOrder');}catch(e){}location.reload();}
+
+function applyFilters(){
+ const term=$('search').value.trim().toLowerCase(),mode=$('filter').value;let shown=0;
+ questions.forEach(q=>{const x=getSelected(q),ok=q.classList.contains('correct');const text=q.innerText.toLowerCase();const matchesText=!term||text.includes(term);const matchesMode=mode==='all'||(mode==='unanswered'&&!x)||(mode==='correct'&&x&&ok)||(mode==='incorrect'&&x&&!ok);const show=matchesText&&matchesMode;q.classList.toggle('hidden-question',!show);if(show)shown++;});
+ $('empty').style.display=shown?'none':'block';
+}
+
+$('restartTop').addEventListener('click',restartQuiz);
+$('saveBtn').addEventListener('click',()=>{saveProgress();const b=$('saveBtn');b.textContent='✓ Saved';setTimeout(()=>b.textContent='💾 Save',1200);});
+$('search').addEventListener('input',applyFilters);$('filter').addEventListener('change',applyFilters);
+$('clearFilters').addEventListener('click',()=>{$('search').value='';$('filter').value='all';applyFilters();});
+$('go').addEventListener('click',()=>{const n=Number($('jump').value);if(!Number.isInteger(n)||n<1||n>total){$('jump').focus();return;}const target=$('question'+n);questions.forEach(q=>q.classList.remove('hidden-question'));if(target){target.scrollIntoView({behavior:'smooth',block:'start'});target.classList.add('focus-question');setTimeout(()=>target.classList.remove('focus-question'),1200);}$('jump').value='';});
+$('jump').addEventListener('keydown',e=>{if(e.key==='Enter')$('go').click();});
+
+let timerId=null,seconds=3600;
+function renderTimer(){const m=Math.floor(seconds/60),s=seconds%60;$('timer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;$('timer').classList.toggle('urgent',seconds<=300);}
+$('timerBtn').addEventListener('click',()=>{if(timerId){clearInterval(timerId);timerId=null;$('timerBtn').textContent='▶ Resume timer';return;}if(seconds<=0)return;timerId=setInterval(()=>{seconds--;renderTimer();if(seconds<=0){clearInterval(timerId);timerId=null;$('timerBtn').textContent='⏱ Time up';alert('Time is up. Your score is shown at the top.');}},1000);$('timerBtn').textContent='⏸ Pause timer';});
+
+shuffleQuestions();bindQuestions();loadProgress();renderTimer();applyFilters();
+</script></body></html>
